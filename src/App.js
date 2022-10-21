@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import About from './components/pages/About';
-import Projects from './components/pages/Projects';
 import Contact from './components/pages/Contact';
 import Resume from './components/pages/Resume';
+import Project from './components/Project';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('About');
@@ -14,7 +14,7 @@ function App() {
       return <About />;
     }
     if (currentPage === 'Projects') {
-      return <Projects />;
+      return <Project />;
     }
     if (currentPage === 'Contacts') {
       return <Contact />;
@@ -30,7 +30,7 @@ function App() {
       <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
       {renderPage()}
     </header>
-
+    <Project/>
     </>
   );
 }
